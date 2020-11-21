@@ -88,7 +88,7 @@ TEST(MY_SCATTER, INT) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     int k = 100000;
-    int ROOT = 4;
+    int ROOT = 0;
     int aSize = k * size;
     std::vector<int> a(aSize);
     std::mt19937 gen;
