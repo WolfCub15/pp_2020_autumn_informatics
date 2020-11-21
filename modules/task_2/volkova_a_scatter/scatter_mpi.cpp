@@ -20,16 +20,13 @@ int MY_Scatter(void* sendBuf, int sendCount,
         return MPI_ERR_COMM;
     }
     if (MPI_Comm_size(MPI_COMM_WORLD, &size) != MPI_SUCCESS) {
-        MPI_Status stat;
-        return stat.MPI_ERROR;
+        return MPI_ERR_COMM;
     }
     if (MPI_Comm_rank(MPI_COMM_WORLD, &rank) != MPI_SUCCESS) {
-        MPI_Status stat;
-        return stat.MPI_ERROR;
+        return MPI_ERR_COMM;
     }
     if (MPI_Type_size(sendType, &sizeTypeSend) != MPI_SUCCESS) {
-        MPI_Status stat;
-        return stat.MPI_ERROR;
+        return MPI_ERR_TYPE;
     }
 
     if (ROOT >= size || ROOT < 0)return MPI_ERR_ROOT;
